@@ -10,7 +10,6 @@ import com.lys.usermanager.repository.UserRowRepository;
 import com.lys.usermanager.service.FunctionService;
 import com.lys.usermanager.service.RoleService;
 import com.lys.usermanager.service.UserService;
-import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -45,7 +44,6 @@ import java.util.stream.Collectors;
  * @create: 2018-09-08 15:08
  **/
 @Service
-@Slf4j
 public class UserServiceImpl implements UserService {
 
 
@@ -191,7 +189,6 @@ public class UserServiceImpl implements UserService {
     public UserDetails loadUserByUsername(String account) throws UsernameNotFoundException {
         Optional<SysUser> byAccount = repository.findByfAccount(account);
         addRoleAndFunction(byAccount);
-        log.info("111111111111");
         return byAccount.get();
     }
 
