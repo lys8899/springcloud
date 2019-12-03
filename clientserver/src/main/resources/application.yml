@@ -1,0 +1,13 @@
+server:
+  port: 8083
+security:
+  oauth2:
+    sso:
+      loginPath: /login   # 登录路径
+    client:
+      clientId: client
+      clientSecret: secret
+      userAuthorizationUri: http://localhost:8081/oauth/authorize
+      access-token-uri: http://localhost:8081/oauth/token
+    resource:
+      userInfoUri: http://localhost:8082/user
